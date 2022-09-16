@@ -4,12 +4,14 @@ import random
 # Print multiline instruction
 # performstring concatenation of string
 print("Winning Rules of the Rock paper scissor game as follows: \n"
-      + "Rock vs paper->paper wins \n"
-      + "Rock vs scissor->Rock wins \n"
-      + "paper vs scissor->scissor wins \n")
+      + "Rock vs Paper->Paper wins \n"
+      + "Rock vs Scissor->Rock wins \n"
+      + "paper vs Scissor->Scissor wins \n")
+
+# desire = True
 
 while True:
-    print("Enter choice \n 1 for Rock, \n 2 for paper, and \n 3 for scissor \n")
+    print("Enter choice \n 1 for Rock \n 2 for Paper \n 3 for Scissor \n")
 
     # take the input from user
     choice = int(input("User turn: "))
@@ -20,20 +22,20 @@ while True:
 
     # looping until user enter invalid input
     while choice > 3 or choice < 1:
-        choice = int(input("enter valid input: "))
+        choice = int(input("Enter Valid Input: "))
 
     # initialize value of choice_name variable
     # corresponding to the choice value
     if choice == 1:
         choice_name = 'Rock'
     elif choice == 2:
-        choice_name = 'paper'
+        choice_name = 'Paper'
     else:
-        choice_name = 'scissor'
+        choice_name = 'Scissor'
 
     # print user choice
-    print("user choice is: " + choice_name)
-    print("\nNow its computer turn.......")
+    print("User choice is: " + choice_name)
+    print("\nNow its computer's turn.......\n")
 
     # Computer chooses randomly any number
     # among 1 , 2 and 3. Using randint method
@@ -50,13 +52,13 @@ while True:
     if comp_choice == 1:
         comp_choice_name = 'Rock'
     elif comp_choice == 2:
-        comp_choice_name = 'paper'
+        comp_choice_name = 'Paper'
     else:
-        comp_choice_name = 'scissor'
+        comp_choice_name = 'Scissor'
 
     print("Computer choice is: " + comp_choice_name)
 
-    print(choice_name + " V/s " + comp_choice_name)
+    print(choice_name + " V/s " + comp_choice_name + "\n")
 
     # we need to check of a draw
     if choice == comp_choice:
@@ -66,16 +68,16 @@ while True:
     # condition for winning
     if ((choice == 1 and comp_choice == 2) or
             (choice == 2 and comp_choice == 1)):
-        print("paper wins => ", end="")
-        result = "paper"
+        print("Paper wins ", end="")
+        result = "Paper"
 
     elif ((choice == 1 and comp_choice == 3) or
           (choice == 3 and comp_choice == 1)):
-        print("Rock wins =>", end="")
+        print("Rock wins ", end="")
         result = "Rock"
     else:
-        print("scissor wins =>", end="")
-        result = "scissor"
+        print("Scissor wins ", end="")
+        result = "Scissor"
 
     # Printing either user or computer wins or draw
     if result == "Draw":
@@ -85,11 +87,12 @@ while True:
     else:
         print("<== Computer wins ==>")
 
-    print("Do you want to play again? (Y/N)")
-    ans = input().lower
+    # print()
+    ans = input("\nDo you want to play again? (Y/N)\n")
 
     # if user input n or N then condition is True
-    if ans == 'n':
+    if ans == 'n' or ans == 'N':
+        # desire = False
         break
 
 # after coming out of the while loop
